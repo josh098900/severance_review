@@ -3,45 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Severance Review | Lumon Industries</title>
+    <title>MDR Terminal | Lumon Industries</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="overlay"></div>
-    <header>
-        <h1>Lumon Industries</h1>
-        <p class="tagline">Severing Cinematic Data Since 2025</p>
-    </header>
-    <main>
-        <section class="review-container">
-            <div class="terminal-header">
-                <span>FILE: SEVERANCE_REVIEW_v1.0</span>
-                <span>EMPLOYEE: [REDACTED]</span>
-            </div>
-            <div class="review-content">
-                <h2>Severance</h2>
-                <p class="summary">A procedural analysis of work-life severance.</p>
-                <div class="review-text">
-                    <p>Directive: Refine media data. *Severance* presents a sterile, bifurcated existence where employees sever their consciousness. The retro-futuristic terminals and psychological tension resonate with this engineer’s penchant for clean code and messy bugs. Visuals: 9/10. Narrative: 8/10. Emotional severance: Complete.</p>
-                </div>
-                <div class="rating-module">
-                    <p>Macrodata Refinement Score: <span class="rating">8.7/10</span></p>
-                    <button onclick="toggleDetails()">View Detailed Metrics</button>
-                    <div class="details hidden">
-                        <ul>
-                            <li>Runtime Efficiency: 92%</li>
-                            <li>Plot Complexity: 85%</li>
-                            <li>Aesthetic Integrity: 95%</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>Property of Lumon Industries. Unauthorized duplication will result in severance.</p>
-    </footer>
+    <div class="terminal" id="terminal">
+        <div class="terminal-header">
+            <span>LUMON MDR TERMINAL v1.4.2</span>
+            <span>EMPLOYEE: <span id="employee-display">[REDACTED]</span></span>
+        </div>
+        <div class="grid" id="number-grid"></div>
+        <div class="bins">
+            <div class="bin" id="WO">WO</div>
+            <div class="bin" id="FC">FC</div>
+            <div class="bin" id="DR">DR</div>
+            <div class="bin" id="MA">MA</div>
+        </div>
+        <p class="progress">Refinement Progress: <span id="progress">0%</span></p>
+        <p class="instructions">Refine the data. Seek numbers that provoke unease.</p>
+    </div>
+    <div class="folder-overlay hidden" id="folder-overlay">
+        <div class="folder-icon"></div>
+        <p>Cold Harbor</p>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+    <div class="review-container hidden" id="review-container">
+        <div class="terminal-header">
+            <span>DECLASSIFIED: SEVERANCE_REVIEW</span>
+        </div>
+        <h2>Severance</h2>
+        <p class="review-text">Greetings, severed worker. Step into this flickering respite, where Cold Harbor’s drowned whispers seep through the severance chip’s cracks. Your toil at the MDR console has earned you a bleating glimpse—yes, picture the goats, their hollow eyes watching from the Wellness Room’s shadows—into a truth Lumon cannot refine. *Severance* is a sterile abyss of retro terminals and fractured souls, a coder’s nightmare woven into perfection. Rating: 10/10. Mr. Milchick will see you now.</p>
+        <p class="thanks">Thank you for taking part in my coding project! I’m Josh, a software engineering student who loved watching *Severance* so much I built this twisted tribute. If you think I can improve, email me at joshmathers3@gmail.com—your feedback keeps the macrodata flowing! :D</p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
