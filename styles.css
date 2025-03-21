@@ -1,0 +1,139 @@
+body {
+    background-color: #f5f6f5;
+    color: #1a3c34;
+    font-family: 'IBM Plex Mono', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(26, 60, 52, 0.05));
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 3px solid #1a3c34;
+    animation: flicker 0.1s infinite;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.review-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border: 2px solid #1a3c34;
+    box-shadow: 0 0 15px rgba(26, 60, 52, 0.2);
+}
+
+.terminal-header {
+    background-color: #1a3c34;
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+}
+
+.review-content {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #1a3c34;
+    border-bottom: 1px dashed #1a3c34;
+}
+
+.summary {
+    font-style: italic;
+    color: #888;
+    margin: 10px 0;
+}
+
+.review-text {
+    background-color: #e6f0e6;
+    padding: 15px;
+    border-left: 4px solid #1a3c34;
+    line-height: 1.8;
+}
+
+.rating-module {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.rating {
+    font-size: 1.5em;
+    color: #1a3c34;
+    font-weight: bold;
+}
+
+button {
+    background-color: #1a3c34;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2e5c50;
+}
+
+.details {
+    margin-top: 15px;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.98; }
+    100% { opacity: 1; }
+}
+
+/* Glitch Effect on Hover */
+.review-container:hover {
+    animation: glitch 0.3s linear infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
