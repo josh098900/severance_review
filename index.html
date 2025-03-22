@@ -3,41 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MDR Terminal | Lumon Industries</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Lumon Login | MDR Terminal</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            font-family: 'VT323', monospace;
+            color: #00ff00;
+        }
+
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .login-box {
+            background-color: #000;
+            border: 2px solid #00ff00;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .login-box h1 {
+            font-size: 1.8em;
+            margin: 0 0 10px;
+        }
+
+        .login-box p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .login-box input {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 5px;
+            background-color: #111;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            font-family: 'VT323', monospace;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+
+        .login-box button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-family: 'VT323', monospace;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-box button:hover {
+            background-color: #00cc00;
+        }
+
+        .error {
+            color: #ff0000;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="terminal" id="terminal">
-        <div class="terminal-header">
-            <span>LUMON MDR TERMINAL v1.4.2</span>
-            <span>EMPLOYEE: <span id="employee-display">[REDACTED]</span></span>
-        </div>
-        <div class="grid" id="number-grid"></div>
-        <div class="bins">
-            <div class="bin" id="WO">WO</div>
-            <div class="bin" id="FC">FC</div>
-            <div class="bin" id="DR">DR</div>
-            <div class="bin" id="MA">MA</div>
-        </div>
-        <p class="progress">Refinement Progress: <span id="progress">0%</span></p>
-        <p class="instructions">Refine the data. Seek numbers that provoke unease.</p>
-    </div>
-    <div class="folder-overlay hidden" id="folder-overlay">
-        <div class="folder-icon"></div>
-        <p>Cold Harbor</p>
-        <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill"></div>
+    <div class="login-overlay">
+        <div class="login-box">
+            <h1>LUMON INDUSTRIES</h1>
+            <p>SEVERANCE PROTOCOL v2.1</p>
+            <p>Please identify yourself, innie.</p>
+            <input type="text" id="employee-name" placeholder="EMPLOYEE NAME" maxlength="20">
+            <input type="password" id="employee-password" placeholder="PASSWORD" maxlength="20">
+            <button onclick="login()">SUBMIT</button>
+            <p class="error hidden" id="login-error">Input required. Compliance is mandatory.</p>
         </div>
     </div>
-    <div class="review-container hidden" id="review-container">
-        <div class="terminal-header">
-            <span>DECLASSIFIED: SEVERANCE_REVIEW</span>
-        </div>
-        <h2>Severance</h2>
-        <p class="review-text">Greetings, severed worker. Step into this flickering respite, where Cold Harbor’s drowned whispers seep through the severance chip’s cracks. Your toil at the MDR console has earned you a bleating glimpse—yes, picture the goats, their hollow eyes watching from the Wellness Room’s shadows—into a truth Lumon cannot refine. *Severance* is a sterile abyss of retro terminals and fractured souls, a coder’s nightmare woven into perfection. Rating: 10/10. Mr. Milchick will see you now.</p>
-        <p class="thanks">Thank you for taking part in my coding project! I’m Josh, a software engineering student who loved watching *Severance* so much I built this twisted tribute. If you think I can improve, email me at joshmathers3@gmail.com—your feedback keeps the macrodata flowing! :D</p>
-    </div>
-    <script src="script.js"></script>
+    <script>
+        function login() {
+            const name = document.getElementById('employee-name').value.trim();
+            const password = document.getElementById('employee-password').value.trim();
+            const error = document.getElementById('login-error');
+
+            if (name && password) {
+                window.location.href = `terminal.html?name=${encodeURIComponent(name)}`;
+            } else {
+                error.classList.remove('hidden');
+                setTimeout(() => error.classList.add('hidden'), 2000);
+            }
+        }
+    </script>
 </body>
 </html>
